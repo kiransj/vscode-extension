@@ -11,7 +11,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.cudaInit"
+    "*"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -19,6 +19,22 @@
       {
         "command": "extension.cudaInit",
         "title": "cuda Init"
+      },
+      {
+        "command": "extension.cudaSetDebug",
+        "title": "cuda set debug"
+      },
+      {
+        "command": "extension.cudaSetRelease",
+        "title": "cuda set release"
+      },
+      {
+        "command": "extension.cudaSetInternal",
+        "title": "cuda set internal"
+      },
+      {
+        "command": "extension.cudaSetExternal",
+        "title": "cuda set external"
       }
     ]
   },
