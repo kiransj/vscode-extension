@@ -2,7 +2,7 @@
   "name": "cuda-driver-development",
   "displayName": "cuda-driver-development",
   "description": "Setup up environemnt for cuda driver build and debug",
-  "version": "0.0.1",
+  "version": "0.4.0",
   "publisher": "ksj",
   "engines": {
     "vscode": "^1.5.0"
@@ -18,23 +18,29 @@
     "commands": [
       {
         "command": "extension.cudaInit",
-        "title": "cuda Init"
+        "title": "cuda Init",
+        "category": "cuda"
       },
       {
         "command": "extension.cudaSetDebug",
-        "title": "cuda set debug"
+        "title": "cuda set debug",
+        "category": "cuda"
       },
       {
         "command": "extension.cudaSetRelease",
-        "title": "cuda set release"
+        "title": "cuda set release",
+        "category": "cuda"
+
       },
       {
         "command": "extension.cudaSetInternal",
-        "title": "cuda set internal"
+        "title": "cuda set internal",
+        "category": "cuda"
       },
       {
         "command": "extension.cudaSetExternal",
-        "title": "cuda set external"
+        "title": "cuda set external",
+        "category": "cuda"
       }
     ]
   },
