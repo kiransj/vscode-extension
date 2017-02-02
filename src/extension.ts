@@ -9,6 +9,7 @@ import { deserialize } from "serializer.ts/Serializer";
 
 var statusBarText = window.createStatusBarItem(StatusBarAlignment.Left);
 const cudaSettingsPath = path.join(vscode.workspace.rootPath, ".vscode", "cuda.json");
+const cudaEnvPath = path.join(vscode.workspace.rootPath, ".vscode", "cuda.sh");
 
 
 // This function gets called when vscode starts up
@@ -65,6 +66,15 @@ class cudaSettings
     {        
         var settingsJson = JSON.stringify(this);
         fs.writeFileSync(filename, settingsJson);
+        var str:string = "";
+        str += "export TOP="+this.TOP + ";\n";
+        str += "export P4ROOT="+this.P4ROOT + ";\n";
+        str += "export build_conf="+this.build_conf + ";\n";
+        str += "export build_type="+this.build_type + ";\n";
+        str += "export target_product="+this.target_product + ";\n";
+        str += "export ARCH="+this.arch + ";\n";
+        str += "export build_name="+this.build_name + ";\n";
+        fs.writeFileSync(cudaEnvPath, str);
     }
 
     loadSettings(filename: string)
